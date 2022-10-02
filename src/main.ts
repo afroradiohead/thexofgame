@@ -1,5 +1,6 @@
 import { Engine, Loader } from "excalibur";
 import { Player } from "./player";
+import { Enemy } from "./enemy";
 import { Resources } from "./resources";
 
 class Game extends Engine {
@@ -10,9 +11,11 @@ class Game extends Engine {
     initialize() {
       
       const player = new Player();
+      const enemy = new Enemy();
       this.add(player);
+      this.add(enemy);
 
-      const loader = new Loader([Resources.Sword]);
+      const loader = new Loader([Resources.Sword, Resources.Goblin]);
       this.start(loader);
     }
   }
